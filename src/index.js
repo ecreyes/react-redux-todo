@@ -10,8 +10,9 @@ let unsubscribe = store.subscribe(() =>
   console.log(store.getState())
 );
 
-store.dispatch(addTareaAction("Esta es una nueva tarea"));
-
+store.dispatch(addTareaAction("Esta es la primera tarea"));
+store.dispatch(addTareaAction("Esta es la segunda tarea"));
+store.dispatch(addTareaAction("Esta es la tercera tarea"));
 unsubscribe();
 
 

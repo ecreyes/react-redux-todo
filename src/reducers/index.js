@@ -1,7 +1,8 @@
 import { combineReducers } from 'redux';
-import {todos} from './todo';
+import {todos,filtro} from './todo';
 
 const todoApp = combineReducers({
+    filtro,
     todos
 });
 

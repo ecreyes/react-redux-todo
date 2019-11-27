@@ -1,9 +1,12 @@
 import React from 'react';
+import VisibilidadTodoList from '../containers/VisibilidadTodoList';
 
 class App extends React.Component {
 	render() {
 		return (
-			<div>App</div>
+			<div>
+				<VisibilidadTodoList/>
+			</div>
 		);
 	}
 }

@@ -1,10 +1,16 @@
 import React from 'react';
 
-class Todo extends React.Component{
-    render(){
-        const {text,complete} = this.props;
-        return(
-            <li>{text}</li>
+class Todo extends React.Component {
+    render() {
+        const { id, text, complete, onTodoClick } = this.props;
+        return (
+            <li
+                style={{
+                    textDecoration: complete ? 'line-through' : 'none'
+                }}
+                onClick={() => onTodoClick(id)}>
+                {text}
+            </li>
         );
     }
 }

@@ -1,6 +1,7 @@
 import { SHOW_ALL } from '../actions/index';
 import { connect } from 'react-redux'
 import TodoList from '../components/TodoList';
+import {completarTareaAction} from '../actions/todo';
 
 
 export const getTodoByFiltro = (todos, filtro) => {
@@ -19,9 +20,18 @@ const mapStateToProps = (state) => {
     };
 }
 
+const mapDispatchToProps = (dispatch)=>{
+    return {
+        onTodoClick:(id)=>{
+            dispatch(completarTareaAction(id));
+        }
+    };
+}
+
 
 const VisibilidadTodoList = connect(
-    mapStateToProps
+    mapStateToProps,
+    mapDispatchToProps
 )(TodoList);
 
 export default VisibilidadTodoList;

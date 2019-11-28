@@ -1,4 +1,4 @@
-import { ADD_TAREA, SHOW_ALL, SET_FILTRO, COMPLETAR_TAREA } from '../actions/index';
+import { ADD_TAREA, SHOW_ALL, SET_FILTRO, COMPLETAR_TAREA,SHOW_NOT_COMPLETE,SHOW_COMPLETE } from '../actions/index';
 import { addTareaAction, setFiltroAction, completarTareaAction } from '../actions/todo';
 import { todos, filtro } from '../reducers/todo';
 
@@ -16,6 +16,16 @@ describe('todo acciones', () => {
     it('listar todas las tareas', () => {
         const res = { type: SET_FILTRO, filtro: SHOW_ALL };
         expect(setFiltroAction(SHOW_ALL)).toEqual(res);
+    });
+
+    it('listar tareas no completadas',()=>{
+        const res = {type:SET_FILTRO,filtro:SHOW_NOT_COMPLETE};
+        expect(setFiltroAction(SHOW_NOT_COMPLETE)).toEqual(res);
+    });
+
+    it('listar tareas completadas',()=>{
+        const res = {type:SET_FILTRO,filtro:SHOW_COMPLETE};
+        expect(setFiltroAction(SHOW_COMPLETE)).toEqual(res);
     });
 });
 

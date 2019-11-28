@@ -1,4 +1,4 @@
-import {ADD_TAREA,SHOW_ALL,COMPLETAR_TAREA} from '../actions/index';
+import {ADD_TAREA,SHOW_ALL,COMPLETAR_TAREA, SHOW_COMPLETE, SET_FILTRO} from '../actions/index';
 let id = 0;
 
 /*
@@ -20,8 +20,14 @@ export const todos = (state = [], action) => {
     }
 }
 
+
+/*
+    action example: {type:SET_FILTRO,filtro:SHOW_ALL}
+*/
 export const filtro = (state=SHOW_ALL,action)=>{
     switch(action.type){
+        case SET_FILTRO:
+            return action.filtro;
         default:
             return state;
     }

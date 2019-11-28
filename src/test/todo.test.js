@@ -51,13 +51,6 @@ describe('todo reducers', () => {
         expect(todos(state, action)).toEqual(nextState);
     });
 
-    it('filtro estado undefined', () => {
-        const state = undefined;
-        const action = {};
-        const nextState = SHOW_ALL;
-        expect(filtro(state, action)).toEqual(nextState);
-    });
-
     it('todos COMPLETAR_TAREA by index', () => {
         const state = [{ id: 1, text: "Una nueva tarea", complete: false }];
         const action = completarTareaAction(1);
@@ -70,5 +63,26 @@ describe('todo reducers', () => {
         const action = completarTareaAction(3);
         const nextState = state;
         expect(todos(state,action)).toEqual(nextState);
+    });
+
+    it('filtro estado undefined', () => {
+        const state = undefined;
+        const action = {};
+        const nextState = SHOW_ALL;
+        expect(filtro(state, action)).toEqual(nextState);
+    });
+
+    it('filtro estado SHOW_COMPLETE',()=>{
+        const state = SHOW_ALL
+        const action = setFiltroAction(SHOW_COMPLETE);
+        const nextState = SHOW_COMPLETE;
+        expect(filtro(state,action)).toEqual(nextState);
+    });
+
+    it('filtro estado SHOW_NOT_COMPLETE',()=>{
+        const state = SHOW_ALL
+        const action = setFiltroAction(SHOW_NOT_COMPLETE);
+        const nextState = SHOW_NOT_COMPLETE;
+        expect(filtro(state,action)).toEqual(nextState);
     });
 });

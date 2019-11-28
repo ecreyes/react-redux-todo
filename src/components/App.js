@@ -1,6 +1,7 @@
 import React from 'react';
 import AddTodo from '../containers/AddTodo';
 import VisibilidadTodoList from '../containers/VisibilidadTodoList';
+import FooterContainer from '../containers/FooterContainer';
 
 class App extends React.Component {
 	render() {
@@ -8,6 +9,7 @@ class App extends React.Component {
 			<div>
 				<AddTodo/>
 				<VisibilidadTodoList/>
+				<FooterContainer/>
 			</div>
 		);
 	}

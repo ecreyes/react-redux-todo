@@ -1,4 +1,4 @@
-import {ADD_TAREA,SHOW_ALL,COMPLETAR_TAREA, SHOW_COMPLETE, SET_FILTRO} from '../actions/index';
+import {ADD_TAREA,SHOW_ALL,COMPLETAR_TAREA, SET_FILTRO} from '../actions/index';
 let id = 0;
 
 /*

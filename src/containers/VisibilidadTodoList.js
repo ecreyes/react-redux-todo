@@ -1,13 +1,25 @@
-import { SHOW_ALL } from '../actions/index';
+import { SHOW_ALL, SHOW_COMPLETE, SHOW_NOT_COMPLETE } from '../actions/index';
 import { connect } from 'react-redux'
 import TodoList from '../components/TodoList';
-import {completarTareaAction} from '../actions/todo';
+import { completarTareaAction } from '../actions/todo';
 
 
 export const getTodoByFiltro = (todos, filtro) => {
     switch (filtro) {
         case SHOW_ALL:
             return todos;
+        case SHOW_COMPLETE:
+            return todos.map((todo)=>{
+                if(todo.complete){
+                    return todo;
+                }
+            });
+        case SHOW_NOT_COMPLETE:
+            return todos.map((todo)=>{
+                if(!todo.complete){
+                    return todo;
+                }
+            });
         default:
             return todos;
     }
@@ -20,9 +32,9 @@ const mapStateToProps = (state) => {
     };
 }
 
-const mapDispatchToProps = (dispatch)=>{
+const mapDispatchToProps = (dispatch) => {
     return {
-        onTodoClick:(id)=>{
+        onTodoClick: (id) => {
             dispatch(completarTareaAction(id));
         }
     };

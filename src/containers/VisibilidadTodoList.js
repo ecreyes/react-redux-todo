@@ -9,17 +9,9 @@ export const getTodoByFiltro = (todos, filtro) => {
         case SHOW_ALL:
             return todos;
         case SHOW_COMPLETE:
-            return todos.map((todo)=>{
-                if(todo.complete){
-                    return todo;
-                }
-            });
+            return todos.filter(todo=>todo.complete);
         case SHOW_NOT_COMPLETE:
-            return todos.map((todo)=>{
-                if(!todo.complete){
-                    return todo;
-                }
-            });
+            return todos.filter(todo=>!todo.complete);
         default:
             return todos;
     }

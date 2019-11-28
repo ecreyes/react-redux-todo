@@ -1,18 +1,18 @@
 import { connect } from 'react-redux';
-import {setFiltroAction} from '../actions/todo';
+import { setFiltroAction } from '../actions/todo';
 import Footer from '../components/Footer';
 
 
-
-const mapDispatchToProps = (dispatch)=>{
+const mapDispatchToProps = (dispatch) => {
     return {
-        onButtonClick:(filtro)=>{
-            console.log(setFiltroAction(filtro));
+        onButtonClick: (filtro) => {
+            dispatch(setFiltroAction(filtro));
         }
-    }
+    };
 }
 
 const FooterContainer = connect(
+    null,
     mapDispatchToProps
 )(Footer);
 
